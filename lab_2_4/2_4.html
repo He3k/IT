@@ -7,26 +7,26 @@
         var openImage = "dp/dg";
         var closeImage = ".gif"
         function Clock() {
-            var buffer_min1, buffer_min2;
-            var buffer_h1, buffer_h2;
+            var min1, min2;
+            var hour1, hour2;
 
-            var buffer_month1, buffer_month2;
-            var buffer_day1, buffer_day2;
-            var buffer_year1, buffer_year2;
+            var mon1, mon2;
+            var day1, day2;
+            var year1, year2;
 
             var now = new Date()
             var hour = now.getHours();
             var minute = now.getMinutes();
             var second = now.getSeconds();
             var day = now.getDate();
-            var month = now.getMonth();
+            var mon = now.getMonth();
             var year = now.getYear();
 
-            month += 0;
+            mon += 0;
             year -= 100;
             now = null;
 
-            document.dote.src = openImage + "c" + closeImage;
+            document.dot.src = openImage + "c" + closeImage;
 
             if (hour >= 12 && hour <= 23)
                 document.apm.src = openImage + "pm" + closeImage;
@@ -39,19 +39,19 @@
             }
             
             if (hour >= 10 && hour <= 12) {
-                buffer_h2 = hour % 10;
-                hour -= buffer_h2;
-                buffer_h1 = hour / 10;
-                document.hour_1.src = openImage + buffer_h1 + closeImage;
-                document.hour_2.src = openImage + buffer_h2 + closeImage;
+                hour2 = hour % 10;
+                hour -= hour2;
+                hour1 = hour / 10;
+                document.hour_1.src = openImage + hour1 + closeImage;
+                document.hour_2.src = openImage + hour2 + closeImage;
             }
             if (hour > 12 && hour < 24) {
                 hour -= 12;
-                buffer_h2 = hour % 10;
-                hour -= buffer_h2;
-                buffer_h1 = hour / 10;
-                document.hour_1.src = openImage + buffer_h1 + closeImage;
-                document.hour_2.src = openImage + buffer_h2 + closeImage;
+                hour2 = hour % 10;
+                hour -= hour2;
+                hour1 = hour / 10;
+                document.hour_1.src = openImage + hour1 + closeImage;
+                document.hour_2.src = openImage + hour2 + closeImage;
             }
 
             if (minute < 10) {
@@ -59,57 +59,57 @@
                 document.minute_2.src = openImage + minute + closeImage; //вторая цифра равна минуте
             }
             if (minute >= 10 && minute < 60) {
-                buffer_min2 = minute % 10;
-                minute -= buffer_min2;
-                buffer_min1 = minute / 10;
-                document.minute_1.src = openImage + buffer_min1 + closeImage;
-                document.minute_2.src = openImage + buffer_min2 + closeImage;
+                min2 = minute % 10;
+                minute -= min2;
+                min1 = minute / 10;
+                document.minute_1.src = openImage + min1 + closeImage;
+                document.minute_2.src = openImage + min2 + closeImage;
             }
-            /*
+            
             if (second < 10) {
                 document.second_1.src = openImage + "0" + closeImage; //первая цифра 0
                 document.second_2.src = openImage + second + closeImage; //вторая цифра равна секунде
             }
             
             if (second >= 10 && second < 60) {
-                buffer_sec2 = second % 10;
-                second -= buffer_sec2;
-                buffer_sec1 = second / 10;
-                document.second_1.src = openImage + buffer_sec1 + closeImage;
-                document.second_2.src = openImage + buffer_sec2 + closeImage;
+                sec2 = second % 10;
+                second -= sec2;
+                sec1 = second / 10;
+                document.second_1.src = openImage + sec1 + closeImage;
+                document.second_2.src = openImage + sec2 + closeImage;
             }
-            */
+            
             if (day < 10) {
                 document.day_1.src = openImage + "0" + closeImage;
                 document.day_2.src = openImage + day + closeImage;
             }
             if (day >= 10 && day <= 31) {
-                buffer_day2 = day % 10;
-                day -= buffer_day2;
-                buffer_day1 = day / 10;
+                day2 = day % 10;
+                day -= day2;
+                day1 = day / 10;
 
-                document.day_1.src = openImage + buffer_day1 + closeImage;
-                document.day_2.src = openImage + buffer_day2 + closeImage;
+                document.day_1.src = openImage + day1 + closeImage;
+                document.day_2.src = openImage + day2 + closeImage;
             }
-            if (month < 10) {
-                document.month_1.src = openImage + "0" + closeImage;
-                document.month_2.src = openImage + month + closeImage;
+            if (mon < 10) {
+                document.mon_1.src = openImage + "0" + closeImage;
+                document.mon_2.src = openImage + mon + closeImage;
             }
-            if (month >= 10) {
-                buffer_month2 = month % 10;
-                month -= buffer_month2;
-                buffer_month1 = month / 10;
+            if (mon >= 10) {
+                mon2 = mon % 10;
+                mon -= mon2;
+                mon1 = mon / 10;
 
-                document.month_1.src = openImage + buffer_month1 + closeImage;
-                document.month_2.src = openImage + buffer_month2 + closeImage;
+                document.mon_1.src = openImage + mon1 + closeImage;
+                document.mon_2.src = openImage + mon2 + closeImage;
             }
             
             if (year >= 10) {
-                buffer_year2 = year % 10;
-                buffer_year1 = year / 10;
+                year2 = year % 10;
+                year1 = year / 10;
 
-                document.year_1.src = openImage + buffer_year1 + closeImage;
-                document.year_2.src = openImage + buffer_year2 + closeImage;
+                document.year_1.src = openImage + year1 + closeImage;
+                document.year_2.src = openImage + year2 + closeImage;
             }
         }
     </script>
@@ -119,20 +119,20 @@
     <p align="center">
         <img name="hour_1" src="dp/dg0.gif">
         <img name="hour_2" src="dp/dg0.gif">
-        <img name="dote" src="dp/dgc.gif">
+        <img name="dot" src="dp/dgc.gif">
         <img name="minute_1" src="dp/dg0.gif">
         <img name="minute_2" src="dp/dg0.gif">
-        <!img name="dote" src="dp/dgc.gif">
-        <!img name="second_1" src="dp/dg0.gif">
-        <!img name="second_2" src="dp/dg0.gif">
+        <img name="dot" src="dp/dgc.gif">
+        <img name="second_1" src="dp/dg0.gif">
+        <img name="second_2" src="dp/dg0.gif">
         <img name="apm" src="dp/dg0.gif">
     <p>
     <p align="center">
         <img name="day_1" src="dp/dg0.gif">
         <img name="day_2" src="dp/dg0.gif">
         <img src="dp/dgp.gif">
-        <img name="month_1" src="dp/dg0.gif">
-        <img name="month_2" src="dp/dg0.gif">
+        <img name="mon_1" src="dp/dg0.gif">
+        <img name="mon_2" src="dp/dg0.gif">
         <img src="dp/dgp.gif">
         <img name="year_1" src="dp/dg0.gif">
         <img name="year_2" src="dp/dg0.gif" onLoad="setTimeout(Clock, 10)"> <!-- запуск функции с интервалом в 1 мс-->
